@@ -6,12 +6,6 @@
 
 Welcome to the Rock, Paper, Scissors game! This project is a front-end coding challenge provided by Frontend Mentor to enhance your HTML, CSS, and JavaScript skills.
 
-## Technologies Used 🛠️
-
-- React
-- Tailwind CSS
-- TypeScript
-
 ## Challenge Description 📝
 
 Your challenge is to build a responsive Rock, Paper, Scissors game based on the provided design. You'll implement the game mechanics allowing users to play against the computer. Additionally, there are bonus objectives, including maintaining the score after refreshing the browser and implementing an extended version of the game, Rock, Paper, Scissors, Lizard, Spock.
@@ -44,7 +38,8 @@ Your challenge is to build a responsive Rock, Paper, Scissors game based on the 
 - 🦎 Lizard beats Paper 📄
 - 🖖 Spock beats Rock 🪨
 
-For a detailed understanding, refer to [The Big Bang Theory clip](https://www.youtube.com/watch?v=iSHPVCBsnLw).
+> [!NOTE]
+> For a detailed understanding, refer to [The Big Bang Theory clip](https://www.youtube.com/watch?v=iSHPVCBsnLw).
 
 ## Project Structure 📁
 
@@ -53,6 +48,17 @@ For a detailed understanding, refer to [The Big Bang Theory clip](https://www.yo
 - `style-guide.md`: Includes design details such as color palette and fonts.
 
 ## Building & Deployment 🚀
+
+> [!TIP]
+> Install the required dependencies and run the project locally using the following commands:
+
+```bash
+curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
+```
+
+```bash
+powershell -c "irm bun.sh/install.ps1|iex" # for Windows
+```
 
 1. Clone this repository to your local machine.
 2. Install dependencies using `bun install`.
