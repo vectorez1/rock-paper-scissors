@@ -1,9 +1,11 @@
 import { useState } from 'react'
-import './App.css'
-import HeaderBanner from './components/HeaderBanner'
-import RulesModal from './components/RulesModal'
-import Game from './components/Game'
-import { useStore } from './lib/store'
+import '../App.css'
+import HeaderBanner from '../components/HeaderBanner'
+import RulesModal from '../components/RulesModal'
+import Game from '../components/Game'
+import { useStore } from '../lib/store'
+
+const title = ['ROCK', 'PAPER', 'SCISSORS']
 
 export default function App() {
   const { score } = useStore()
@@ -15,7 +17,7 @@ export default function App() {
 
   return (
     <main className="container h-screen pt-14">
-      <HeaderBanner score={score} />
+      <HeaderBanner score={score} title={title} type='Normal' />
 
       <Game />
 
@@ -26,7 +28,7 @@ export default function App() {
         >
           RULES
         </button>
-        {isOpen && <RulesModal toggleModal={toggleModal} />}
+        {isOpen && <RulesModal type='Normal' toggleModal={toggleModal} />}
       </section>
     </main>
   )

@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom'
 import Rules from '../assets/Rules'
 
 export default function RulesModal({
   toggleModal,
+  type = 'Normal',
 }: {
   toggleModal: () => void
+  type: 'Normal' | 'New'
 }) {
   return (
     <aside className="fixed inset-0 z-50 flex items-center justify-center transition bg-white md:bg-black/50">
@@ -22,7 +25,18 @@ export default function RulesModal({
             </svg>
           </button>
         </section>
-        <Rules />
+        {type === 'Normal' ? <Rules /> : <Rules type="New" />}
+        <div className="text-neutral-darktext">
+          {type !== 'Normal' ? (
+            <Link to="/" className="px-4 py-2 rounded shadow-sm bg-slate-50">
+              Normal Mode
+            </Link>
+          ) : (
+            <Link to="/new" className="px-4 py-2 rounded shadow-sm bg-slate-50">
+              Bonus Mode
+            </Link>
+          )}
+        </div>
       </div>
     </aside>
   )
