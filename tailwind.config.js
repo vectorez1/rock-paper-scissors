@@ -25,7 +25,7 @@ export default {
             from: 'hsl(261, 73%, 60%)',
             to: 'hsl(261, 72%, 63%)',
           },
-          cyan: {
+          spock: {
             from: 'hsl(189, 59%, 53%)',
             to: 'hsl(189, 58%, 57%)',
           },
