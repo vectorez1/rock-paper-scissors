@@ -50,9 +50,9 @@ export default function Game() {
     choice: Choice,
   ) => {
     setUserChoice(choice)
-    const computerChoice: Choice | string = generateComputerChoice()
+    const computerChoice = generateComputerChoice()
     if (computerChoice === null) return
-    setComputerChoice(computerChoice)
+    setComputerChoice(computerChoice as Choice)
     const result = determineWinner(choice, computerChoice)
     setResult(result)
     if (result === 'win') {
