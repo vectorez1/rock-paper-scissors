@@ -5,26 +5,32 @@ import confetti from 'canvas-confetti'
 
 type Result = 'win' | 'draw' | 'lose'
 
-export default function Game() {
+enum HandStates{
+  None,
+  Rock,
+  Paper,
+  Scissors
+}
+
+  export default function Game() {
   const { incrementScore } = useStore()
-  const [userChoice, setUserChoice] = useState<'rock' | 'paper' | 'scissors' | null>(null)
-  const [computerChoice, setComputerChoice] = useState<string | null>(null)
+  const [userChoice, setUserChoice] = useState<HandStates>(HandStates.None)
+  const [computerChoice, setComputerChoice] = useState<HandStates>(HandStates.None)
   const [result, setResult] = useState<Result | null>(null)
 
-  const choices = ['rock', 'paper', 'scissors']
-
   const generateComputerChoice = () => {
-    const randomIndex = Math.floor(Math.random() * choices.length)
-    return choices[randomIndex]
+    const enumValues = Object.values(HandStates).filter(value => typeof value === "number") as HandStates[];
+    const randomIndex = Math.floor(Math.random() * enumValues.length);
+    return enumValues[randomIndex];
   }
 
-  const determineWinner = (userChoice: 'rock' | 'paper' | 'scissors', computerChoice: string) => {
+  const determineWinner = (userChoice: HandStates, computerChoice: HandStates) => {
     if (userChoice === computerChoice) {
       return 'draw'
     } else if (
-      (userChoice === 'rock' && computerChoice === 'scissors') ||
-      (userChoice === 'paper' && computerChoice === 'rock') ||
-      (userChoice === 'scissors' && computerChoice === 'paper')
+      (userChoice === HandStates.Rock && computerChoice === HandStates.Scissors) ||
+      (userChoice === HandStates.Paper && computerChoice === HandStates.Rock) ||
+      (userChoice === HandStates.Scissors && computerChoice === HandStates.Paper)
     ) {
       return 'win'
     } else {
@@ -32,7 +38,7 @@ export default function Game() {
     }
   }
 
-  const handleUserChoice = (choice: 'rock' | 'paper' | 'scissors') => {
+  const handleUserChoice = (choice: HandStates) => {
     setUserChoice(choice)
     const computerChoice = generateComputerChoice()
     setComputerChoice(computerChoice)
@@ -60,9 +66,9 @@ export default function Game() {
         </svg>
       </div>
       <section className="z-0 flex flex-wrap items-center justify-center gap-12 w-96">
-        <IconPaper onClick={() => handleUserChoice('paper')} />
-        <IconScissors onClick={() => handleUserChoice('scissors')} />
-        <IconRock onClick={() => handleUserChoice('rock')} />
+        <IconPaper onClick={() => handleUserChoice(HandStates.Paper)} />
+        <IconScissors onClick={() => handleUserChoice(HandStates.Scissors)} />
+        <IconRock onClick={() => handleUserChoice(HandStates.Rock)} />
       </section>
     </section>
   )
