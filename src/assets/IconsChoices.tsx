@@ -1,4 +1,10 @@
-export function IconRock({ onClick, className }: { onClick: () => void, className?: string }) {
+export function IconRock({
+  onClick,
+  className,
+}: {
+  onClick: () => void;
+  className?: string;
+}) {
   return (
     <button
       className={`p-4 overflow-hidden rounded-full bg-gradient-to-t from-primary-rock-from to-primary-rock-to max-size-[160px] ${className}`.trim()}
@@ -13,10 +19,16 @@ export function IconRock({ onClick, className }: { onClick: () => void, classNam
         </svg>
       </div>
     </button>
-  )
+  );
 }
 
-export function IconPaper({ onClick, className }: { onClick: () => void, className?: string }) {
+export function IconPaper({
+  onClick,
+  className,
+}: {
+  onClick: () => void;
+  className?: string;
+}) {
   return (
     <button
       className={`p-4 overflow-hidden rounded-full bg-gradient-to-t from-primary-paper-from to-primary-paper-to max-size-[160px] ${className}`.trim()}
@@ -31,10 +43,16 @@ export function IconPaper({ onClick, className }: { onClick: () => void, classNa
         </svg>
       </div>
     </button>
-  )
+  );
 }
 
-export function IconScissors({ onClick, className }: { onClick: () => void, className?: string }) {
+export function IconScissors({
+  onClick,
+  className,
+}: {
+  onClick: () => void;
+  className?: string;
+}) {
   return (
     <button
       className={`p-4 overflow-hidden rounded-full bg-gradient-to-t from-primary-scissor-from to-primary-scissor-to ${className}`.trim()}
@@ -49,10 +67,16 @@ export function IconScissors({ onClick, className }: { onClick: () => void, clas
         </svg>
       </div>
     </button>
-  )
+  );
 }
 
-export function IconLizard({ onClick, className }: { onClick: () => void, className?: string }) {
+export function IconLizard({
+  onClick,
+  className,
+}: {
+  onClick: () => void;
+  className?: string;
+}) {
   return (
     <button
       className={`p-4 overflow-hidden rounded-full bg-gradient-to-t from-primary-lizard-from to-primary-lizard-to ${className}`.trim()}
@@ -67,10 +91,16 @@ export function IconLizard({ onClick, className }: { onClick: () => void, classN
         </svg>
       </div>
     </button>
-  )
+  );
 }
 
-export function IconSpock({ onClick, className }: { onClick: () => void, className?: string }) {
+export function IconSpock({
+  onClick,
+  className,
+}: {
+  onClick: () => void;
+  className?: string;
+}) {
   return (
     <button
       className={`p-4 overflow-hidden rounded-full bg-gradient-to-t from-primary-spock-from to-primary-spock-to ${className}`.trim()}
@@ -85,5 +115,5 @@ export function IconSpock({ onClick, className }: { onClick: () => void, classNa
         </svg>
       </div>
     </button>
-  )
+  );
 }
