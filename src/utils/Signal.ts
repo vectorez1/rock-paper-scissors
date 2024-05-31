@@ -1,16 +1,15 @@
+class Signal {
+  private listeners: Array<Function> = [];
 
-class Signal{
-    private listeners : Array<Function> = []
+  public AddListener(listener: Function) {
+    this.listeners.push(listener);
+  }
 
-    public AddListener(listener:Function){
-        this.listeners.push(listener)
-    }
+  public RemoveListener(listener: Function) {
+    this.listeners.splice(this.listeners.indexOf(listener));
+  }
 
-    public RemoveListener(listener:Function){
-        this.listeners.splice(this.listeners.indexOf(listener));
-    }
-
-    public Emit(params:{} = {}) : void{
-        this.listeners.map(listener=>listener(params))
-    }
+  public Emit(params: {} = {}): void {
+    this.listeners.map((listener) => listener(params));
+  }
 }
